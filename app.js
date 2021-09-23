@@ -13,6 +13,10 @@ app.listen(3000, function() {
   console.log("server is running on port 3000");
 });
 
+app.post("/failure", function(re, res) {
+  res.redirect("/");
+});
+
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/signup.html");
 });
@@ -61,10 +65,6 @@ app.post("/", function(req, res) {
     // ************************THIS IS THE CODE THAT NEEDS TO BE ADDED FOR THE NEXT LECTURE*************************
     // So the catch statement is executed when there is an error so if anything goes wrong the code in the catch code is executed. In the catch block we're sending back the failure page. This means if anything goes wrong send the faliure page
      run().catch(e => res.sendFile(__dirname + "/failure.html"));
-   });
-
-   app.post("/failure", function(re, res) {
-     res.redirect("/");
    });
 
 //   var data = {
