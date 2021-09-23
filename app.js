@@ -17,7 +17,7 @@ app.post("/", function(req, res) {
     members: [
       {
         email_address: email,
-        status: "subscrubed"
+        status: "subscrubed",
         merge_fields: {
           FNAME: firstName,
           LNAME: lastName
